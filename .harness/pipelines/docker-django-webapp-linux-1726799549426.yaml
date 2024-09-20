@@ -57,7 +57,7 @@ pipeline:
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
                     connectorRef: account.myaccount
-                    repo: ataqueosuno/hi-there/
+                    repo: ataqueosuno/hi-there
                     tags:
                       - latest
           platform:
