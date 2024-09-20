@@ -59,7 +59,7 @@ pipeline:
                     connectorRef: account.myaccount
                     repo: ataqueosuno/hi-there/
                     tags:
-                      - test
+                      - latest
           platform:
             os: Linux
             arch: Amd64
