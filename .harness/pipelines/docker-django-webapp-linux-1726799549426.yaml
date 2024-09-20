@@ -36,21 +36,11 @@ pipeline:
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
               - step:
-                  type: Run
                   name: Test
                   identifier: test
-                  spec:
-                    shell: Sh
-                    command: |-
-                      echo hello world
-                      echo imagine that I\'m a great test
-                    reports:
-                      type: JUnit
-                      spec:
-                        paths:
-                          - report.xml
-                    envVariables:
-                      PIP_CACHE_DIR: /root/.cache
+                  template:
+                    templateRef: amaizing_test_that_were_reusing_all_the_time
+                    versionLabel: V1
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
