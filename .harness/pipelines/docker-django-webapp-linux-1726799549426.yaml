@@ -11,7 +11,7 @@ pipeline:
         repoName: miguel-ca/docker-django-webapp-linux
   stages:
     - stage:
-        name: Test
+        name: Build
         identifier: test
         description: ""
         type: CI
@@ -51,6 +51,15 @@ pipeline:
                           - report.xml
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.myaccount
+                    repo: ataqueosuno/hi-there/
+                    tags:
+                      - test
           platform:
             os: Linux
             arch: Arm64
